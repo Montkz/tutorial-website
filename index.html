@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Setup</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Software Setup</h1>
+        <nav>
+            <ul>
+                <li><a href="#ide-setup">IDE Setup</a></li>
+                <li><a href="#version-control">Version Control</a></li>
+                <li><a href="#language-setup">Language Setup</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="logo-container">
+            <img src="images/Murdoch_Logo.png" alt="Murdoch University Logo" class="murdoch-logo">
+        </div>
+        
+        <div id="tutorials">
+            <!-- Tutorials will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Murdoch University. All rights reserved.</p>
+    </footer>
+
+    <script src="js/tutorial.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const manager = new TutorialManager();
+            manager.addTutorial(new Tutorial("VS Code Setup", "Learn how to install and configure Visual Studio Code."));
+            manager.addTutorial(new Tutorial("Git Basics", "Learn the fundamentals of version control with Git and GitHub."));
+            manager.addTutorial(new Tutorial("Python Environment", "Set up a Python development environment."));
+            
+            const tutorialSection = document.getElementById('tutorials');
+            tutorialSection.appendChild(manager.renderAllTutorials());
+        });
+    </script>
+</body>
+</html>
